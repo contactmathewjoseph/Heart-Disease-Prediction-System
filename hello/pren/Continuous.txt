@@ -1,0 +1,408 @@
+
+import java.util.*;
+import java.io.*;
+import java.text.DecimalFormat;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class Continuous extends HttpServlet {
+	 
+	 public void doGet(HttpServletRequest request,
+	                    HttpServletResponse response)
+	            throws ServletException, IOException
+	  {
+		  response.setContentType("text/html");
+
+		  PrintWriter outg = response.getWriter();
+
+    int i,j,z,flag,i1,i2;
+    double inp[]=new double [13];
+    int conf[][] =new int[5][6];
+    double para[][] =new double[5][7];
+    int tot[]= new int[]{0,0,0,0,0};
+    int fn[]= new int[]{0,0,0,0,0};
+ 
+    int c1[]=new int[] {135,43,23,30,11}; 
+     
+    double a[]=new double[14];
+    double pc[]=new double[] {0.54,0.18,0.118,0.115,0.043};
+    double ac1[]=new double[5];
+    double sc1[]=new double[5];
+    double cpc1[]=new double[5];
+    double fbsc1[]=new double[5];
+    double rc1[]=new double[5];
+    double ec1[]=new double[5];
+    double slc1[]=new double[5];
+    double cac1[]=new double[5];
+    double thc1[]=new double[5];
+    double trc1[]=new double[5];
+    double scc1[]=new double[5];
+    double hc1[]=new double[5];
+    double oc1[]=new double[5];
+    double b[]=new double[5];
+    double d[]=new double[5];
+    double maxi,w1,w2,k=0,m1,m2;
+    int op;
+try{
+ 
+    		File f = new File("c:/temp/out1.txt");
+ 
+    		f.delete();
+    			
+    		}
+ 
+   catch(Exception e){ }
+/*
+FileReader f2= new FileReader("c:/javaP/Naivebayes/tstc.txt");
+Scanner sn2 = new Scanner(f2);
+sn2.useDelimiter("[,\r\n]");
+
+
+for(i=0;i<242;i++)
+{
+for(j=0;j<14;j++)
+{
+a[j]=sn2.nextDouble();
+}
+z=(int)a[13];
+c1[z]=c1[z]+1;
+    try{
+	sn2.nextLine();
+	}
+	catch(NoSuchElementException e)
+	{
+	sn2.close();
+	}
+}
+
+*/
+
+  
+   FileReader f1= new FileReader("c:/temp/test.txt");
+ 
+    Scanner ip = new Scanner(f1);
+    ip.useDelimiter("[,\r\n]");
+
+    while(ip.hasNextLine())
+{ flag=0;
+    for(j=0;j<13;j++)
+    {
+        inp[j]=ip.nextDouble();
+    }
+    FileReader fin= new FileReader("c:/temp/in.txt");
+   Scanner sn = new Scanner(fin);
+   sn.useDelimiter("[,\r\n]");
+    int ac[]=new int[] {0,0,0,0,0};
+    int sc[]=new int[] {0,0,0,0,0};
+    int cpc[]=new int[] {0,0,0,0,0};
+    int fbsc[]=new int[] {0,0,0,0,0};
+    int rc[]=new int[] {0,0,0,0,0};
+    int ec[]=new int[] {0,0,0,0,0};
+    int slc[]=new int[] {0,0,0,0,0};
+    int cac[]=new int[] {0,0,0,0,0};
+    int thc[]=new int[] {0,0,0,0,0};
+    int trc[]=new int[] {0,0,0,0,0};
+    int scc[]=new int[] {0,0,0,0,0};
+    int hc[]=new int[] {0,0,0,0,0};
+    int oc[]=new int[] {0,0,0,0,0};
+    
+    op=0;
+
+for(i=0;i<303;i++)
+{
+for(j=0;j<14;j++)
+{
+try{
+a[j]=sn.nextInt();
+}
+catch(NoSuchElementException e)
+{
+a[j]=sn.nextDouble();
+ }
+
+}
+if(a[0]==inp[0])
+{
+    z=(int)a[13];
+    ac[z]++;
+   
+}
+if(a[1]==inp[1])
+{
+    z=(int)a[13];
+    sc[z]++;
+   
+}
+if(a[2]==inp[2])
+{
+    z=(int)a[13];
+    cpc[z]++;
+}
+if(a[3]==inp[3])
+{
+    z=(int)a[13];
+    fbsc[z]++;
+}
+if(a[4]==inp[4])
+{
+    z=(int)a[13];
+    rc[z]++;
+}
+if(a[5]==inp[5])
+{
+    z=(int)a[13];
+    ec[z]++;
+}
+if(a[6]==inp[6])
+{
+    z=(int)a[13];
+    slc[z]++;
+}
+if(a[7]==inp[7])
+{
+    z=(int)a[13];
+    cac[z]++;
+}
+if(a[8]==inp[8])
+{
+    z=(int)a[13];
+    thc[z]++;
+}
+if(a[9]==inp[9])
+{
+    z=(int)a[13];
+    trc[z]++;
+}
+if(a[10]==inp[10])
+{
+    z=(int)a[13];
+    scc[z]++;
+}
+if(a[11]==inp[11])
+{
+    z=(int)a[13];
+    hc[z]++;
+}
+if(a[12]==inp[12])
+{
+    z=(int)a[13];
+    oc[z]++;
+}
+try{
+sn.nextLine();
+}
+catch(NoSuchElementException e)
+{ sn.close();}
+}
+
+for(i=0;i<5;i++)
+{
+	
+	if(ac[i]==0 || sc[i]==0 || fbsc[i]==0|| rc[i]==0||cpc[i]==0 || ec[i]==0 || cac[i]==0|| slc[i]==0 || trc[i]==0|| thc[i]==0 || scc[i]==0 ||hc[i]==0 ||oc[i]==0)
+	{
+		flag=1;
+		break;
+	}
+}
+if(flag==1)
+{
+	for(i=0;i<5;i++)
+	{
+      
+		
+        ac1[i]= (double)(ac[i]+2)/(c1[i]+13);
+		
+		
+        sc1[i]=(double)(sc[i]+2)/(c1[i]+13);
+	
+    
+	    cpc1[i]=(double)(cpc[i]+2)/(c1[i]+13);
+     
+	    fbsc1[i]=(double)(fbsc[i]+2)/(c1[i]+13);
+	
+	    rc1[i]=(double)(rc[i]+2)/(c1[i]+13);
+	
+	    ec1[i]=(double)(ec[i]+2)/(c1[i]+13);
+	
+	    slc1[i]=(double)(slc[i]+2)/(c1[i]+13);
+	
+	    cac1[i]=(double)(cac[i]+2)/(c1[i]+13);
+	
+	    thc1[i]=(double)(thc[i]+2)/(c1[i]+13);
+	
+	    trc1[i]=(double)(trc[i]+2)/(c1[i]+13);
+	    
+	    scc1[i]=(double)(scc[i]+2)/(c1[i]+13);
+	 
+	    hc1[i]=(double)(hc[i]+2)/(c1[i]+13);
+	
+	    oc1[i]=(double)(oc[i]+2)/(c1[i]+13);
+	
+	}	
+}
+if (flag==0){
+
+for(i=0;i<5;i++)
+{
+
+    ac1[i]= (double)ac[i]/c1[i];
+    sc1[i]=(double)sc[i]/c1[i];
+    cpc1[i]=(double)cpc[i]/c1[i];
+    fbsc1[i]=(double)fbsc[i]/c1[i];
+    rc1[i]=(double)rc[i]/c1[i];
+    ec1[i]=(double)ec[i]/c1[i];
+    slc1[i]=(double)slc[i]/c1[i];
+    cac1[i]=(double)cac[i]/c1[i];
+    thc1[i]=(double)thc[i]/c1[i];
+    trc1[i]=(double)trc[i]/c1[i];
+    scc1[i]=(double)scc[i]/c1[i];
+    hc1[i]=(double)hc[i]/c1[i];
+    oc1[i]=(double)oc[i]/c1[i];
+    // pc[i]=pc[i]/c[i];
+
+} 
+ }
+for(i=0;i<5;i++)
+{
+    b[i]=(double)ac1[i]*sc1[i]*cpc1[i]*fbsc1[i]*rc1[i]*ec1[i]*slc1[i]*cac1[i]*thc1[i]*trc1[i]*scc1[i]*hc1[i]*oc1[i];
+    
+     d[i]=(double)b[i]*pc[i];
+     
+}
+maxi=d[0];
+for(i=1;i<5;i++)
+{
+   if(d[i]>maxi)
+   {
+       maxi=d[i];
+        op=i;
+   }
+
+}
+ try{
+ PrintWriter out = new PrintWriter(new FileWriter("c:/temp/out1.txt",true));
+ out.println(op);
+ out.close();
+
+
+ }
+    catch(IOException e1) {
+      System.out.println("Error during reading/writing");
+ } 
+
+//System.out.println("class:"+op);
+try{
+ip.nextLine();
+}
+catch(NoSuchElementException e)
+{
+ ip.close();
+ }
+}FileReader f3= new FileReader("C:/temp/sol1.txt");
+Scanner sn3 = new Scanner(f3);
+sn3.useDelimiter("[\r\n]");
+
+FileReader f4= new FileReader("c:/temp/out1.txt");
+Scanner sn4 = new Scanner(f4);
+sn4.useDelimiter("[\r\n]");
+k=0;
+    for(i=0;i<61;i++)
+	  {
+		  m1=sn3.nextDouble();
+		  m2=sn4.nextDouble();
+		  
+		          i1=(int)m1;
+			  i2=(int)m2;
+			  tot[i1]++;	  
+			  
+		   
+			  if(m1==m2)
+			  {  
+				  conf[i1][i1]++;
+				   k++;
+			  }
+			  
+			  else
+			  {
+				  conf[i1][i2]++;
+				  fn[i1]++;
+				  
+			  }
+		  try{
+				  sn3.nextLine();
+				  sn4.nextLine();
+				  }
+				  catch(NoSuchElementException e)
+				  { 
+				   sn3.close();
+				   sn4.close();
+				  }
+		  
+	  }
+	  
+	 
+	 k=(double)k/61;
+         k=k*100;
+	  
+outg.println("Testing Accuracy of Naive Bayes using Normal Distribution");
+DecimalFormat ob = new DecimalFormat("0.00");
+	
+ outg.println(ob.format(k)); 
+for(i=0;i<5;i++)
+ for(j=0;j<5;j++)
+   conf[i][5]=conf[i][5]+conf[i][j];
+		  
+		  for(i=0;i<5;i++)
+		  {	
+			  for(j=0;j<5;j++)
+			  {
+				  para[i][0]=(double)conf[i][i]/tot[i];
+				  para[i][1]=(double)(conf[i][5]-conf[i][i])/tot[i];
+				  para[i][2]=1.0-para[i][1];
+				  para[i][3]=(double)fn[i]/tot[i];
+				  para[i][4]=para[i][0]/(para[i][0]+para[i][1]);
+				  para[i][5]=para[i][0]/(para[i][0]+para[i][3]);
+				  para[i][6]=((para[i][0]+para[i][2])/(para[i][0]+para[i][1]+para[i][2]+para[i][3]))*100;
+				  
+				  
+				  
+				  
+			  }
+		  }
+		  
+		  outg.println("Accuracy Calculation Parameters");
+		  
+		  outg.println("True Positive False Positive True Negative False Negative Precision Recall Accuracy");
+		  for(i=0;i<5;i++)
+		  {	
+			  for(j=0;j<7;j++)
+			  {
+				  outg.print(ob.format(para[i][j])+"       "); 
+			  }
+			  outg.println();
+		  }
+		  
+		  
+		  
+		  outg.println("Confusion Matrix");
+		  outg.println();
+		  outg.println(" a"+"  "+"b"+"  "+"c"+"  "+"d"+"  "+"e");
+		
+		  for(i=0;i<5;i++)
+		  {	
+			  for(j=0;j<5;j++)
+		    	 { outg.print(ob.format(conf[i][j])+"  "); 
+		    	     }
+		          outg.println();
+		          }
+		  
+		
+	  
+}
+	 public void doPost(HttpServletRequest request,
+             HttpServletResponse response)
+throws ServletException, IOException {
+doGet(request, response);
+}
+}
+

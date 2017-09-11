@@ -1,0 +1,374 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	    background-image:url("gg1.jpg") ;
+	height: 100%; 
+    background-size:cover;
+ 
+
+		font: normal 12px Arial, Helvetica, sans-serif;
+		}
+#nav	{
+		width: 924px;
+		height: 40px;
+		margin: 0 auto;
+		}
+#social {
+		float:right;
+		margin: 5px 0px;
+		}
+#container	{background: url(cont.jpg) no-repeat;
+		width: 904px;
+		margin: 0 auto;
+		background-color: #fff;
+		padding: 10px;
+		}
+#hotel1		{
+		width: 904px;
+		height: 360px;
+		margin: 0 auto;
+		background-color: #808080;
+		}
+
+#hotel2		{
+		width: 904px;
+		height: 360px;
+		margin: 0 auto;
+		background-color: #C0C0C0;
+		}
+
+
+#hotel3		{
+		width: 904px;
+		height: 360px;
+		margin: 0 auto;
+		background-color: #808080;
+		}
+
+
+#hotel5		{
+		width: 904px;
+		height: 360px;
+		margin: 0 auto;
+		background-color: #808080;
+		}
+
+
+#hotel4		{
+		width: 904px;
+		height: 360px;
+		margin: 0 auto;
+		background-color: #C0C0C0;
+		}
+
+
+
+
+#header	{
+		height: 334px;
+		width: 904px;
+		
+		}
+#content	{
+		}
+#cont-left	{
+		position: relative;
+		float: left;
+		width: 150px;
+		}
+#cont-right	{
+		position: relative;
+		float: left;
+		width: 754px;
+		padding-bottom: 20px;
+		}
+#footer	{
+		width: 924px;
+		margin: 0 auto;
+		}
+
+
+#hl1,hl2,hl3,hl4,hl5	{
+		position: relative;
+		float: left;
+		width: 900px;
+		padding-right: 10px;
+		}
+
+
+
+#line		{
+background: #242e30 url(f.jpg) no-repeat;
+		width: 904px;
+		height: 10px;
+		margin: 0 auto;
+		background-color: #000000;
+
+		
+		}
+
+
+#line1		{
+background: #242e30 url(f.jpg) no-repeat;
+		width: 904px;
+		height: 50px;
+		margin: 0 auto;
+		background-color: #000000;
+font-weight: bold;
+		font-size: 40px;
+font-color:blue;
+		
+		}
+
+#cont-left-home	{
+		position: relative;
+		float: left;
+		width: 442px;
+		padding-right: 10px;
+		}
+#cont-right-home	{
+		position: relative;
+		float: right;
+		width: 442px;
+		padding-left: 10px;
+		}
+		
+/* Classes */
+h1	{
+		font-weight: bold;
+		font-size: 16px;
+		margin: 15px 0;
+		}
+h2	{
+		font-weight: bold;
+		margin: 0 0 -10px;
+		}
+
+.ht		{		text-align: center;
+				text-color:#fff;
+		}
+
+p	{
+		margin: 15px 0;
+		}
+.navimg	{
+		position: relative;
+		top: 13px;
+		left: 11px;
+		}
+.copy	{
+		color: #fff;
+		text-align: center;
+		}
+.leftnav	{
+		list-style: none;
+		margin: 15px 0;
+		}
+.leftnav li	{
+		margin: 3px 0;
+		}
+.main	{
+		font-size: 16px;
+		font-weight: bold;
+		padding-bottom: 15px;
+		tex
+		}
+.list	{
+		margin-left: 15px;
+		}
+.text-center	{
+		text-align: center;
+		}
+.center	{
+		margin: auto;
+		}
+.gallery img	{
+		margin: 5px;
+		}
+.smalltext	{
+		font-size: 10px;
+		}
+.ordered	{
+		margin: 15px;
+		}
+.ordered li	{
+		margin: 5px;
+		}
+.unordered	{
+		margin: 15px;
+		}
+.unordered li	{
+		}
+.bigger	{
+		font-size: 16px;
+		}
+.float-left	{
+		position: relative;
+		float: left;
+		margin: 0 5px 5px 0;
+		}
+.float-right	{
+		position: relative;
+		float: right;
+		margin: 0 0 5px 5px;
+		}
+.contact-img	{
+		position: relative;
+		float: right;
+		top: 30px;
+		right: 70px;
+		text-align: center;
+		font-style: italic;
+		}
+.contact-img p	{
+		margin: 0;
+		padding: 0;
+		}
+.contact-img img	{
+		border: 1px solid #000;
+		}
+.twelve	{
+		margin-top: 10px;
+		}
+
+/* Rollovers */
+.home a, .about a, .community a, .shopping a, .business a, .contact a	{
+		display:block;
+		float: left;
+		width: 110px;
+		height: 19px;
+		padding: 0;
+		font: bold 13px sans-serif;;
+		color: #333;
+		text-decoration: none;	
+		margin: 8px 5px 0 0;
+		}
+.home a	{
+		background: url(../images/nav/home.png) 0 0 no-repeat;
+		width: 55px;
+		}
+.about a	{
+		background: url(../images/nav/about.png) 0 0 no-repeat;
+		width: 60px;
+		}
+.community a	{
+		background: url(../images/nav/community.png) 0 0 no-repeat;
+		width: 110px;
+		}
+.shopping a	{
+		background: url(../images/nav/shopping.png) 0 0 no-repeat;
+		width: 90px;
+		}
+.business a	{
+		background: url(../images/nav/business.png) 0 0 no-repeat;
+		width: 78px;
+		}
+.contact a	{
+		background: url(../images/nav/contact.png) 0 0 no-repeat;
+		width: 85px;
+		}
+.roll a:hover { 
+		background-position: 0 -19px;
+		}
+
+/* Links */
+a	{
+		color: #000;
+		}
+a:hover	{
+		color: #ccc;
+		}
+.leftnav a	{
+		color: #000;
+		text-decoration: none;
+		}
+.leftnav a:hover	{
+		color: #ccc;
+		}
+#footer a	{
+		color: #fff;
+		text-decoration: none;
+		}
+#footer a:hover	{
+		color: #999;
+		}
+h2 a	{
+		text-decoration: none;
+		}
+		
+/* Forms */
+span.formtext	{
+		display: block;
+		float: left;
+		width:250px;
+		text-align: left;
+		background-color:#FFFFFF;
+		}
+.spacer	{
+
+		padding-bottom: 10px;
+		background-color:#FFFFFF;
+		}
+fieldset	{
+		padding: 10px;
+		background-color:#FFFFFF;
+		}
+legend	{
+		color: #000000;
+		}
+
+#menu
+{
+    /*Styling the menu width and height*/
+    list-style:none;
+    margin:30px auto 0px auto;
+    width:1000px;
+    height:50px;
+    padding:0px 20px 0px 20px;
+     
+    /* Creating the curved corner of the border*/
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    /*Styling the background with fading effect*/
+     
+    background: italic blue;
+    background: -moz-linear-gradient(top, #000, #999);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#000), to( 
+
+#999));
+     
+    /*Making the shadow effect into the menu bar */
+    box-shadow: inset 1px 1px 10px #FFFFFF;
+    -moz-box-shadow: inset 1px 1px 10px #FFFFFF;
+    -webkit-box-shadow: inset 1px 1px 10px #FFFFFF;
+    border:1px solid #000;
+     
+     
+}
+#menu li /*Styling the li part of the menu*/
+{
+    float:left;
+    padding:4px 10px 4px 10px;
+    display: block;
+    position:relative;
+    text-align:center;
+    margin-right:30px;
+    margin-top:7px;
+    border:none;
+ 
+     
+}
+ 
+#menu li a /*Styling the link part of the menu li*/
+{
+    text-decoration:none;
+    color:#FFFF66;
+    text-shadow:1px 1px 10px #FFCC99;
+}
+#menu li:hover a /*Styling the link part of the menu li in hover state*/
+{
+    color:#FFF;
+    text-shadow:1px 1px 10px #CCC;
+}
